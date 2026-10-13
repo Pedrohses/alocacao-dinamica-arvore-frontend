@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Árvore Binária de Busca · Alocação Dinâmica em C</title>
+  </head>
+  <body>
+    <header class="topo">
+      <div class="marca">
+        <div>
+          <h1 id="titulo">Árvore Binária de Busca</h1>
+          <p>Alocação dinâmica em C · <code>malloc</code> / <code>free</code></p>
+        </div>
+      </div>
+      <div class="topo-direita">
+        <div class="stat"><span id="stat-total">0</span><small>nós</small></div>
+        <div class="stat"><span id="stat-altura">0</span><small>altura</small></div>
+        <label class="velocidade">
+          <small>velocidade</small>
+          <select id="velocidade">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+            <option value="4">4×</option>
+          </select>
+        </label>
+        <button class="btn-fantasma" id="btn-estrutura" title="Slide de introdução">Introdução</button>
+        <span class="status" id="status"><i></i><span>conectando...</span></span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="painel" id="rotinas"></aside>
+
+      <section class="palco">
+        <div class="canvas-wrap">
+          <svg id="arvore" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div class="aviso-espelho" id="aviso-espelho" hidden>Árvore espelhada - não é mais uma BST</div>
+          <div class="legenda">
+            <span><i class="l-atual"></i>comparando</span>
+            <span><i class="l-caminho"></i>caminho</span>
+            <span><i class="l-achado"></i>encontrado / novo</span>
+            <span><i class="l-alvo"></i>removido / free</span>
+            <span><i class="l-sucessor"></i>sucessor</span>
+          </div>
+        </div>
+        <div class="saida">
+          <div class="saida-topo">
+            <strong>Saída</strong>
+            <div class="sequencia" id="sequencia"></div>
+            <button class="btn-fantasma pequeno" id="btn-limpar-log">limpar</button>
+          </div>
+          <ol class="log" id="log"></ol>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="modal" hidden>
+      <div class="slide" role="dialog" aria-modal="true" id="slide"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
